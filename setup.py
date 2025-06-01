@@ -32,7 +32,7 @@ setup(
         "wavebeat @ git+https://github.com/hugofloresgarcia/wavebeat",
         "lac @ git+https://github.com/hugofloresgarcia/lac.git",
         "descript-audiotools @ git+https://github.com/hugofloresgarcia/audiotools.git",
-        "gradio", 
+        "gradio==4.44.0",  # 4.44.1 is suggested, but pyharp in requirements conflicts at 4.44.0
         "loralib",
         "torch_pitch_shift",
         "plotly",
