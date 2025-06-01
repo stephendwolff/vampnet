@@ -22,9 +22,11 @@ interface.load_finetuned(model_choice)
 
 # load an example audio file
 signal = at.AudioSignal("assets/example.wav")
+# [1, 2, 661500]
 
 # get the tokens for the audio
 codes = interface.encode(signal)
+# [1, 14, 862]
 
 # build a mask for the audio
 mask = interface.build_mask(
@@ -32,6 +34,7 @@ mask = interface.build_mask(
     periodic_prompt=13, 
     upper_codebook_mask=3,
 )
+# [1, 14, 862]
 
 # generate the output tokens
 output_tokens = interface.vamp(
@@ -40,9 +43,11 @@ output_tokens = interface.vamp(
     typical_filtering=False, 
     debug=True
 )
+# [1, 14, 862]
 
 # convert them to a signal
 output_signal = interface.decode(output_tokens)
+# [1, 1, 662016]
 
 # save the output signal
 output_signal.write("scratch/output.wav")
