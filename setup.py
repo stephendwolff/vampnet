@@ -10,7 +10,10 @@ setup(
     classifiers=[
         "Intended Audience :: Developers",
         "Natural Language :: English",
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Artistic Software",
         "Topic :: Multimedia",
         "Topic :: Multimedia :: Sound/Audio",
@@ -28,11 +31,11 @@ setup(
     install_requires=[
         "torch==2.4.1",
         "argbind>=0.3.2",
-        "numpy==1.23",
+        "numpy>=1.24,<2.0",
         "wavebeat @ git+https://github.com/hugofloresgarcia/wavebeat",
         "lac @ git+https://github.com/hugofloresgarcia/lac.git",
         "descript-audiotools @ git+https://github.com/hugofloresgarcia/audiotools.git",
-        "gradio==4.44.0",  # 4.44.1 is suggested, but pyharp in requirements conflicts at 4.44.0
+        "gradio>=4.44.0",  # Updated to support newer versions with Python 3.11+
         "loralib",
         "torch_pitch_shift",
         "plotly",
