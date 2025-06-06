@@ -28,7 +28,7 @@ def apply_mask(
     ):
     assert mask.ndim == 3, "mask must be (batch, n_codebooks, seq), but got {mask.ndim}"
     assert mask.shape == x.shape, f"mask must be same shape as x, but got {mask.shape} and {x.shape}" 
-    assert mask.dtype == torch.long, "mask must be long dtype, but got {mask.dtype}"
+    assert mask.dtype == torch.long, f"mask must be long dtype, but got {mask.dtype}"
     assert ~torch.any(mask > 1), "mask must be binary"
     assert ~torch.any(mask < 0), "mask must be binary"
 
