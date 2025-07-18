@@ -13,9 +13,13 @@ MODELS_DIR = ROOT / "models" / "vampnet"
 
 from huggingface_hub import hf_hub_download, HfFileSystem
 DEFAULT_HF_MODEL_REPO_DIR = ROOT / "DEFAULT_HF_MODEL_REPO"
-DEFAULT_HF_MODEL_REPO = DEFAULT_HF_MODEL_REPO_DIR.read_text().strip()
-# DEFAULT_HF_MODEL_REPO = "hugggof/vampnet"
+try:
+    DEFAULT_HF_MODEL_REPO = DEFAULT_HF_MODEL_REPO_DIR.read_text().strip()
+except FileNotFoundError:
+    DEFAULT_HF_MODEL_REPO = "default"  # or whatever default you prefer
+
 FS = HfFileSystem()
+
 
 def download_codec():
     # from dac.model.dac import DAC
